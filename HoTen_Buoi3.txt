@@ -1,0 +1,4 @@
+Họ và tên: Trần Minh Khang
+Lớp: Buổi 3
+Lab: Bài 3 - Xây dựng ứng dụng bán hàng với ASP.NET Core MVC (Phần 1)
+Database: .\SQLEXPRESS - TranMinhKhang_QuanLyBanHang

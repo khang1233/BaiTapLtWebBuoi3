@@ -1,0 +1,87 @@
+@{
+    ViewData["Title"] = "Trang Chủ";
+}
+
+<div class="row align-items-center mb-5 py-4">
+    <div class="col-lg-6 mb-4 mb-lg-0">
+        <h5 class="text-primary fw-bold text-uppercase tracking-wider mb-2" style="letter-spacing: 2px;">Lab 3 - ASP.NET Core MVC</h5>
+        <h1 class="display-4 fw-extrabold text-dark mb-3" style="font-weight: 800; line-height: 1.2;">Hệ Thống Quản Lý <br><span class="text-primary">Bán Hàng Cao Cấp</span></h1>
+        <p class="lead text-muted mb-4">Hệ thống quản lý sản phẩm và danh mục sản phẩm được xây dựng bằng Entity Framework Core trên nền tảng .NET 8 và SQLEXPRESS. Trang trí toàn diện với Bootstrap 5.3.</p>
+        <div class="d-flex flex-wrap gap-3">
+            <a asp-controller="Product" asp-action="Index" class="btn btn-primary btn-premium-primary px-4 py-3">
+                <i class="bi bi-bag-check-fill me-2"></i> Khám Phá Sản Phẩm
+            </a>
+            <a asp-controller="Category" asp-action="Index" class="btn btn-outline-primary btn-premium-outline px-4 py-3">
+                <i class="bi bi-grid-fill me-2"></i> Xem Danh Mục
+            </a>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 text-center">
+        <!-- Dashboard Welcome Visual -->
+        <div class="card border-0 shadow-lg p-4 rounded-4" style="background: linear-gradient(135deg, #4361ee, #3f37c9); color: #ffffff; overflow: hidden; position: relative;">
+            <div class="position-absolute top-0 end-0 p-3 opacity-10">
+                <i class="bi bi-rocket-takeoff" style="font-size: 10rem;"></i>
+            </div>
+            
+            <h4 class="fw-bold mb-3"><i class="bi bi-mortarboard-fill"></i> Thông Tin Sinh Viên</h4>
+            <hr class="border-light opacity-25">
+            
+            <div class="text-start mt-4 px-3">
+                <div class="mb-3 d-flex align-items-center gap-3">
+                    <div class="p-2 bg-white bg-opacity-10 rounded-3 text-white"><i class="bi bi-person-bounding-box" style="font-size: 1.2rem;"></i></div>
+                    <div>
+                        <div class="text-white-50 small">Họ và Tên</div>
+                        <div class="fw-bold fs-5">Trần Minh Khang</div>
+                    </div>
+                </div>
+                
+                <div class="mb-3 d-flex align-items-center gap-3">
+                    <div class="p-2 bg-white bg-opacity-10 rounded-3 text-white"><i class="bi bi-calendar-event" style="font-size: 1.2rem;"></i></div>
+                    <div>
+                        <div class="text-white-50 small">Thời Gian Lớp Học</div>
+                        <div class="fw-bold fs-5">Buổi 3</div>
+                    </div>
+                </div>
+                
+                <div class="mb-3 d-flex align-items-center gap-3">
+                    <div class="p-2 bg-white bg-opacity-10 rounded-3 text-white"><i class="bi bi-database-fill-gear" style="font-size: 1.2rem;"></i></div>
+                    <div>
+                        <div class="text-white-50 small">Cơ Sở Dữ Liệu SQL Server</div>
+                        <div class="fw-bold fs-6 font-monospace">.\SQLEXPRESS - TranMinhKhang_QuanLyBanHang</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<h3 class="text-center fw-bold text-dark mb-4">Các Tính Năng Trọng Tâm</h3>
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="card card-premium p-4 h-100">
+            <div class="d-inline-flex p-3 bg-primary bg-opacity-10 text-primary rounded-4 mb-3" style="width: fit-content;">
+                <i class="bi bi-bag-check" style="font-size: 2rem;"></i>
+            </div>
+            <h4 class="fw-bold text-dark mb-2">Quản Lý Sản Phẩm</h4>
+            <p class="text-muted">Các tính năng hiển thị danh sách sản phẩm dưới dạng grid card bắt mắt, thêm mới sản phẩm kèm theo tính năng tải lên hình ảnh minh họa chất lượng cao, cập nhật thông tin và xoá sản phẩm khỏi hệ thống.</p>
+            <a asp-controller="Product" asp-action="Index" class="btn btn-link text-primary p-0 fw-bold mt-auto text-decoration-none" style="width: fit-content;">
+                Đi tới quản lý sản phẩm <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card card-premium p-4 h-100">
+            <div class="d-inline-flex p-3 bg-primary bg-opacity-10 text-primary rounded-4 mb-3" style="width: fit-content;">
+                <i class="bi bi-grid" style="font-size: 2rem;"></i>
+            </div>
+            <h4 class="fw-bold text-dark mb-2">Quản Lý Danh Mục</h4>
+            <p class="text-muted">Cho phép phân loại hàng hoá bằng danh mục sản phẩm (Categories). Hỗ trợ đầy đủ chức năng Thêm, Xoá, Sửa và Danh sách danh mục được thiết kế bằng bảng dữ liệu (Data Table) cực kỳ chuyên nghiệp.</p>
+            <a asp-controller="Category" asp-action="Index" class="btn btn-link text-primary p-0 fw-bold mt-auto text-decoration-none" style="width: fit-content;">
+                Đi tới quản lý danh mục <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

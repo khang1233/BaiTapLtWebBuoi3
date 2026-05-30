@@ -1,0 +1,69 @@
+@model IEnumerable<TranMinhKhang_Buoi3.Models.Category>
+
+@{
+    ViewData["Title"] = "Quản Lý Danh Mục";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold text-dark m-0"><i class="bi bi-grid-fill text-primary"></i> Quản Lý Danh Mục</h2>
+        <p class="text-muted m-0">Phân loại các sản phẩm trong hệ thống cửa hàng</p>
+    </div>
+    <a asp-action="Add" class="btn-premium-primary">
+        <i class="bi bi-plus-circle-fill me-1"></i> Thêm Danh Mục Mới
+    </a>
+</div>
+
+<div class="card card-premium p-0 overflow-hidden">
+    <div class="card-header bg-white border-0 p-4">
+        <h5 class="fw-bold text-dark m-0">Tất Cả Danh Mục</h5>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="p-5 text-center">
+            <i class="bi bi-folder-x text-muted" style="font-size: 3rem;"></i>
+            <h5 class="mt-3 text-secondary">Chưa có danh mục nào</h5>
+            <p class="text-muted mb-3">Tạo danh mục mới để bắt đầu phân loại sản phẩm của bạn.</p>
+            <a asp-action="Add" class="btn btn-primary">Tạo Danh Mục</a>
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table table-hover align-middle m-0">
+                <thead class="table-light py-3">
+                    <tr>
+                        <th class="ps-4 py-3 text-secondary font-monospace" style="width: 15%; font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase;">Mã Số</th>
+                        <th class="py-3 text-secondary" style="font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase;">Tên Danh Mục</th>
+                        <th class="py-3 text-secondary text-center" style="width: 25%; font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase;">Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="ps-4 font-monospace fw-bold text-secondary">#@item.Id</td>
+                            <td>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="p-2 bg-light rounded-3 text-primary"><i class="bi bi-folder"></i></div>
+                                    <span class="fw-semibold text-dark">@item.Name</span>
+                                </div>
+                            </td>
+                            <td class="text-center">
+                                <div class="d-flex justify-content-center gap-2">
+                                    <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm rounded-3 px-3 py-2" style="font-weight: 500;">
+                                        <i class="bi bi-pencil-square"></i> Sửa
+                                    </a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm rounded-3 px-3 py-2" style="font-weight: 500;">
+                                        <i class="bi bi-trash"></i> Xoá
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
